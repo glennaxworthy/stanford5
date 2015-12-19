@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="luD-xe-B8z">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="N4u-hl-Sd0">
+            <objects>
+                <splitViewController id="luD-xe-B8z" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="mnq-bF-LUT" kind="relationship" relationship="masterViewController" id="QUi-uK-oY9"/>
+                        <segue destination="oVW-AC-QP4" kind="relationship" relationship="detailViewController" id="78v-1I-QdM"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRa-r3-ay2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360.95999999999998" y="1204.9066666666668"/>
+        </scene>
+        <!--Georeferenced Photos-->
+        <scene sceneID="h8x-47-jRT">
+            <objects>
+                <tableViewController id="u4f-td-Pg4" customClass="GeoreferencedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rQx-nI-kfN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopPlacesTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GeoreferencedTableViewCell" textLabel="x56-jH-zqe" detailTextLabel="uZk-0e-lk7" style="IBUITableViewCellStyleSubtitle" id="s5A-km-Bea">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s5A-km-Bea" id="rrj-tH-2wU">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x56-jH-zqe">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uZk-0e-lk7">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="u4f-td-Pg4" id="w6T-r9-gog"/>
+                            <outlet property="delegate" destination="u4f-td-Pg4" id="Ity-P6-8I2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Georeferenced Photos" id="z2o-UW-Ny6"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIl-Pl-gFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="665"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="vgn-Qc-QFU">
+            <objects>
+                <viewController id="l6L-OQ-4DU" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gQp-xt-RmQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rvI-Sy-sEP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kx9-KV-czH">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXz-qp-3xw">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9Xn-Uf-8TK">
+                                <rect key="frame" x="366" y="493" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eXz-qp-3xw" firstAttribute="leading" secondItem="kx9-KV-czH" secondAttribute="leading" id="1RY-5I-4jT"/>
+                            <constraint firstItem="9Xn-Uf-8TK" firstAttribute="centerX" secondItem="eXz-qp-3xw" secondAttribute="centerX" id="ZKY-VJ-tze"/>
+                            <constraint firstItem="eXz-qp-3xw" firstAttribute="bottom" secondItem="rvI-Sy-sEP" secondAttribute="top" id="cFd-eZ-eUJ"/>
+                            <constraint firstAttribute="trailing" secondItem="eXz-qp-3xw" secondAttribute="trailing" id="oV0-kX-glf"/>
+                            <constraint firstItem="9Xn-Uf-8TK" firstAttribute="centerY" secondItem="eXz-qp-3xw" secondAttribute="centerY" id="rUa-De-ePl"/>
+                            <constraint firstItem="eXz-qp-3xw" firstAttribute="top" secondItem="kx9-KV-czH" secondAttribute="top" id="ucX-2Q-ZH4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Drn-Fu-3b2"/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="eXz-qp-3xw" id="hxQ-NH-Kda"/>
+                        <outlet property="spinner" destination="9Xn-Uf-8TK" id="BpN-RX-Hpi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsU-D5-yrE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2103" y="1763"/>
+        </scene>
+        <!--Georeferenced Photos-->
+        <scene sceneID="HnV-Re-gxe">
+            <objects>
+                <navigationController title="Georeferenced Photos" automaticallyAdjustsScrollViewInsets="NO" id="mnq-bF-LUT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Top Places" id="Fz4-Ii-UkU"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="7VR-XS-WkT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aJk-0H-aBj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u4f-td-Pg4" kind="relationship" relationship="rootViewController" id="mF6-nw-6JR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEk-MX-JSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="665"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ei2-GQ-obv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oVW-AC-QP4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cnf-bm-jzV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="l6L-OQ-4DU" kind="relationship" relationship="rootViewController" id="Z8y-oi-Xh4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHh-HG-MUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="1763"/>
+        </scene>
+    </scenes>
+</document>
